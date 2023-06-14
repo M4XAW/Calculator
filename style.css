@@ -23,8 +23,8 @@ body {
 }
 
 .calculator {
-    height: auto;
-    width: 23.3vw;
+    /* height: min(auto, 67.2vh); */
+    width: 340px;git a
     background-color: black;
     border-radius: 50px;
     box-shadow: 0 0 15px black;
