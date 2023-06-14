@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'SF-Pro-Text-Light';
+    src: url('../fonts/SF-Pro-Text-Light.otf') format('opentype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+    text-decoration: none;
+    list-style: none;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: grey;
+    font-family: 'SF-Pro-Text-Light';
+    font-weight: bold;
+}
+
+.calculator {
+    height: auto;
+    width: 23.3vw;
+    background-color: black;
+    border-radius: 50px;
+    box-shadow: 0 0 15px black;
+    border: 3px solid grey;
+    aspect-ratio: 1/1;
+}
+
+.result {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: white;
+    font-size: 6rem;
+    height: 200px;
+    padding: 20px 20px 0 20px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: auto;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+    padding: 20px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    margin: 7px;
+    border-radius: 100%;
+    color: white;
+    background-color: #313131;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button:active {
+    transform: scale(0.92);
+}
+
+.orange {
+    background-color: #f69a06;
+}
+
+.grey {
+    color: black;
+    background-color: #a0a0a0;
+}
+
+.zero {
+    grid-column: span 2;
+    width: 90%;
+    border-radius: 30px;
+}
+
+/* #zero {
+    justify-content: flex-start;
+    padding-left: 20px;
+} */
