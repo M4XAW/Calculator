@@ -1,27 +1,28 @@
-console.log("Hello, World!");
+var result = $(".result");
+var buttons = $(".button");
+var currentValue = "0";
 
-let result = [];
-
-$(document).ready(function () {
-
-    $(".button").click(function () {
-
-        if ($(".result").text() == 0) {
-            $(".result").text(this.innerHTML);
-        } else {
-            $(".result").append(this.innerHTML);
-        }
-
-        // $(".result").text( $(".result").text(this.innerHTML));
-        // $(".result").append(this.innerHTML);
-    });
-
-    $("#AC").click(function () {
-        $(".result").text(0)
-    });
-
-    $("#equal").click(function () {
-        var resultat = $(".result").text();
-        console.log("Résultat :", resultat);
-    });
+buttons.click(function () {
+    var buttonValue = $(this).text();
+    
+    switch (buttonValue) {
+      case "AC":
+        currentValue = "0";
+        break;
+      case "+/-":
+        currentValue *= -1;
+        break;
+      case "%":
+        currentValue /= 100;
+        break;
+      case "=":
+        var expression = currentValue.replace("x", "*");
+        currentValue = new Function('return ' + expression)();
+        break;
+      default:
+        currentValue = currentValue === "0" ? buttonValue : currentValue + buttonValue;
+        break;
+    }
+    
+    result.text(currentValue);
 });
